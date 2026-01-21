@@ -1,0 +1,13 @@
+#Logs
+Logs
+*.logs
+
+# Node Modules
+
+fontend/node_modules
+node_modules
+
+.env
+frontend/.env
+
+.DS_Store
