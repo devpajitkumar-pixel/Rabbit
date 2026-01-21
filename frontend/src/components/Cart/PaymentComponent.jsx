@@ -7,11 +7,14 @@ const PaymentComponent = ({ amount, onSuccess, onError }) => {
 
   const handlePayment = async () => {
     // 1️⃣ Get order from backend
-    const res = await fetch("/api/create-razorpay-order", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ amount }),
-    });
+    const res = await fetch(
+      `${import.meta.env.VITE_BACKEND_URL}/api/create-razorpay-order`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ amount }),
+      },
+    );
 
     const order = await res.json();
 
