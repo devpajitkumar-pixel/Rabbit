@@ -30,6 +30,10 @@ app.use(
   }),
 );
 
+app.get("/", (req, res) => {
+  res.send("Welcome to Rabbit Server.");
+});
+
 //API Routes
 app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
