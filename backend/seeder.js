@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 import Product from "./models/product.js";
 import User from "./models/user.js";
 import Cart from "./models/cart.js";
+import Checkout from "./models/checkout.js";
+import Order from "./models/order.js";
 import products from "./data/products.js";
 
 dotenv.config();
@@ -17,6 +19,9 @@ mongoose.connect(process.env.MONGO_URI);
 const seedData = async () => {
   try {
     //Clear existing data
+
+    await Order.deleteMany();
+    await Checkout.deleteMany();
     await Cart.deleteMany();
     await Product.deleteMany();
     await User.deleteMany();
