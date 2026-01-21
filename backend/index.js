@@ -65,9 +65,9 @@ app.post("/api/create-razorpay-order", async (req, res) => {
   res.json(order);
 });
 
-// const PORT = process.env.PORT || 5000;
-// const MODE = process.env.NODE_ENV;
+const PORT = process.env.PORT || 5000;
+const MODE = process.env.NODE_ENV;
 
-// app.listen(PORT, () =>
-//   console.log(`Server is running on http://localhost:${PORT} in ${MODE} mode.`),
-// );
+app.listen(PORT, () =>
+  console.log(`Server is running on http://localhost:${PORT} in ${MODE} mode.`),
+);
